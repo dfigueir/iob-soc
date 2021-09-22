@@ -86,6 +86,8 @@ module system
    // data cat bus
    wire [`REQ_W-1:0]         cpu_d_req;
    wire [`RESP_W-1:0]        cpu_d_resp;
+
+   wire irq_timer;
    
    //instantiate the cpu
    iob_picorv32 cpu
@@ -94,6 +96,8 @@ module system
         .rst     (cpu_reset),
         .boot    (boot),
         .trap    (trap),
+
+        .irq_timer (irq_timer),
         
         //instruction bus
         .ibus_req(cpu_i_req),

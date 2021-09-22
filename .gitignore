@@ -14,6 +14,9 @@ software/*/*
 
 !software/firmware/firmware.c
 !software/firmware/firmware.S
+!software/firmware/irq.c
+!software/firmware/irq.h
+!software/firmware/irq.S
 
 !software/console/console.c
 !software/console/console.h

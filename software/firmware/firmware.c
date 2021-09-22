@@ -1,5 +1,6 @@
 #include "stdlib.h"
 #include <stdio.h>
+#include <stdbool.h>
 #include "system.h"
 #include "periphs.h"
 #include "iob-uart.h"
@@ -26,6 +27,11 @@ int main()
 
     printf("\nExecution time: %d clock cycles\n", (unsigned int) elapsed);
     printf("\nExecution time: %dus @%dMHz\n\n", elapsedu, FREQ/1000000);
+
+    timer_interrupt_enable();
+    timer_set_interrupt_period(100000000);
+
+    while (true);
 
     uart_finish();
 }
